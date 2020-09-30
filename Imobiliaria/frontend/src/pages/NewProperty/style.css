@@ -1,0 +1,46 @@
+.new-property-container .content{
+    width: 100%;
+    padding: 96px;
+    background: #f0f0f5;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-property-container .content section{
+    width:100%;
+    max-width: 550px;
+}
+
+.new-property-container .content section h1{
+    margin: 64px 0 32px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.new-property-container .content section h3{
+    margin-top: 10px;
+    margin-left: -30px;
+}
+
+.new-property-container .content section p{
+    font-size: 13px;
+    color: #737380;
+    line-height: 32px;
+    text-align: center;
+}
+
+.new-property-container .content form input{
+    margin-top: 10px;
+    height: 30px;
+}
+
+.checkboxes{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-left: -60px;
+    width: 350px;
+}
