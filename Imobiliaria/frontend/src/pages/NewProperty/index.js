@@ -6,6 +6,7 @@ import { FiArrowLeft } from 'react-icons/fi';
 import api from '../../services/api';
 
 export default function NewProperty(){
+    const [tipo, setTipo] = useState('');
     const [apartamento, setApartamento] = useState(false);
     const [casa, setCasa] = useState(false);
     const [bairro, setBairro] = useState('');
@@ -30,6 +31,7 @@ export default function NewProperty(){
         e.preventDefault();
 
         const data = {
+           tipo,
            bairro,
            endereco,
            quartos,
@@ -80,6 +82,7 @@ export default function NewProperty(){
                             id="checkBoxApartamento" 
                             checked={apartamento}
                             onClick={() => {
+                                setTipo('apartamento');
                                 if(casa)
                                     setCasa(false);
                                 setApartamento(!apartamento);
@@ -92,6 +95,7 @@ export default function NewProperty(){
                             id="cs" 
                             checked={casa}
                             onClick={() => {
+                                setTipo('casa');
                                 if(apartamento)
                                     setApartamento(false);
                                     setCasa(!casa);

@@ -84,7 +84,7 @@ export default function Profile(){
                 </div>
 
             <ul>
-                {property.map(property => {(
+                {property.filter(property => property.bairro === "Bairro1").map(property => (
                     <li key = {property.id}>
                        
                        <strong>VALOR DO ALUGUEL:</strong>
@@ -92,7 +92,7 @@ export default function Profile(){
    
                        <strong>DETALHES DO IMÓVEL:</strong>
                        <p>Tipo: {property.tipo}</p>
-                       <p>Bairro: {property.bairo}</p>
+                       <p>Bairro: {property.bairro}</p>
                        <p>Endereço: {property.endereco}</p>
                        <p>Quartos: {property.quartos}</p>
                        <p>Suites: {property.suites}</p>
@@ -102,16 +102,16 @@ export default function Profile(){
                        <p>Armarios: {property.armarios}</p>
                        <p>Descricao: {property.descricao}</p>
                        <p>Aluguel: {property.aluguel}</p>
-                       <p hidden = {!property.tipo === 'apartamento'}>Andar: {property.andar}</p>
-                       <p hidden = {!property.tipo === 'apartamento'}>Portaria: {property.portaria}</p>
-                       <p hidden = {!property.tipo === 'apartamento'}>Condominio: {property.condominio}</p>
+                       {!property.tipo === 'apartamento' && <p>Andar: {property.andar}</p>}
+                       {!property.tipo === 'apartamento' && <p>Portaria: {property.portaria}</p>}
+                       {!property.tipo === 'apartamento' && <p>Condominio: {property.condominio}</p>}
 
                        <button onClick = {() => handleDeleteProperty(property.id)} type = "button">
                            <FiTrash2 size = {20} color = "#a8a8b3"/>
                        </button>
                    </li>
                 
-                )})} 
+                ))} 
             </ul>
         </div>
     );
